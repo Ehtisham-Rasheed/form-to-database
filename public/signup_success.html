@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Signup Success Page</title>
+</head>
+
+<body>
+
+    <p>Please Select your Tech Stack:</p>
+    <p>
+        <label for="html">
+            <input type="radio" name="tech" value="HTML" id="html"> HTML
+        </label>
+        <label for="css">
+            <input type="radio" name="tech" value="CSS" id="css"> CSS
+        </label>
+        <label for="javascript">
+            <input type="radio" name="tech" value="JavaScript" id="javascript"> JavaScript
+        </label>
+    </p>
+    <p>
+        <button id="btnTech">Submit</button>
+    </p>
+    <p id="output"></p>
+    <script>
+        let btn = document.getElementById('btnTech');
+        let output = document.getElementById('output');
+
+        btn.addEventListener('click', () => {
+            let techs = document.getElementsByName('tech');
+            techs.forEach((tech) => {
+                if (tech.checked) {
+                    output.innerText = `You selected: ${tech.value}`;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
